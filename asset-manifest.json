@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.b100e6da.chunk.css",
-    "main.js": "/react-gh-pages/static/js/main.33c27374.chunk.js",
-    "main.js.map": "/react-gh-pages/static/js/main.33c27374.chunk.js.map",
-    "runtime-main.js": "/react-gh-pages/static/js/runtime-main.566348f1.js",
-    "runtime-main.js.map": "/react-gh-pages/static/js/runtime-main.566348f1.js.map",
-    "static/js/2.4f3d2838.chunk.js": "/react-gh-pages/static/js/2.4f3d2838.chunk.js",
-    "static/js/2.4f3d2838.chunk.js.map": "/react-gh-pages/static/js/2.4f3d2838.chunk.js.map",
-    "index.html": "/react-gh-pages/index.html",
-    "precache-manifest.4f2c9ca37fad352b52263617aa6a5bc1.js": "/react-gh-pages/precache-manifest.4f2c9ca37fad352b52263617aa6a5bc1.js",
-    "service-worker.js": "/react-gh-pages/service-worker.js",
-    "static/css/main.b100e6da.chunk.css.map": "/react-gh-pages/static/css/main.b100e6da.chunk.css.map",
-    "static/media/logo.svg": "/react-gh-pages/static/media/logo.25bf045c.svg"
+    "main.css": "/chim-shop-chai-clone/static/css/main.b100e6da.chunk.css",
+    "main.js": "/chim-shop-chai-clone/static/js/main.6cafcb8d.chunk.js",
+    "main.js.map": "/chim-shop-chai-clone/static/js/main.6cafcb8d.chunk.js.map",
+    "runtime-main.js": "/chim-shop-chai-clone/static/js/runtime-main.aadc9ebd.js",
+    "runtime-main.js.map": "/chim-shop-chai-clone/static/js/runtime-main.aadc9ebd.js.map",
+    "static/js/2.4f3d2838.chunk.js": "/chim-shop-chai-clone/static/js/2.4f3d2838.chunk.js",
+    "static/js/2.4f3d2838.chunk.js.map": "/chim-shop-chai-clone/static/js/2.4f3d2838.chunk.js.map",
+    "index.html": "/chim-shop-chai-clone/index.html",
+    "precache-manifest.38247b3b1e589bd6a4d1c56967e2d321.js": "/chim-shop-chai-clone/precache-manifest.38247b3b1e589bd6a4d1c56967e2d321.js",
+    "service-worker.js": "/chim-shop-chai-clone/service-worker.js",
+    "static/css/main.b100e6da.chunk.css.map": "/chim-shop-chai-clone/static/css/main.b100e6da.chunk.css.map",
+    "static/media/logo.svg": "/chim-shop-chai-clone/static/media/logo.25bf045c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.566348f1.js",
+    "static/js/runtime-main.aadc9ebd.js",
     "static/js/2.4f3d2838.chunk.js",
     "static/css/main.b100e6da.chunk.css",
-    "static/js/main.33c27374.chunk.js"
+    "static/js/main.6cafcb8d.chunk.js"
   ]
 }
