@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.b100e6da.chunk.css",
+    "main.js": "/react-gh-pages/static/js/main.33c27374.chunk.js",
+    "main.js.map": "/react-gh-pages/static/js/main.33c27374.chunk.js.map",
+    "runtime-main.js": "/react-gh-pages/static/js/runtime-main.566348f1.js",
+    "runtime-main.js.map": "/react-gh-pages/static/js/runtime-main.566348f1.js.map",
+    "static/js/2.4f3d2838.chunk.js": "/react-gh-pages/static/js/2.4f3d2838.chunk.js",
+    "static/js/2.4f3d2838.chunk.js.map": "/react-gh-pages/static/js/2.4f3d2838.chunk.js.map",
+    "index.html": "/react-gh-pages/index.html",
+    "precache-manifest.4f2c9ca37fad352b52263617aa6a5bc1.js": "/react-gh-pages/precache-manifest.4f2c9ca37fad352b52263617aa6a5bc1.js",
+    "service-worker.js": "/react-gh-pages/service-worker.js",
+    "static/css/main.b100e6da.chunk.css.map": "/react-gh-pages/static/css/main.b100e6da.chunk.css.map",
+    "static/media/logo.svg": "/react-gh-pages/static/media/logo.25bf045c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.566348f1.js",
+    "static/js/2.4f3d2838.chunk.js",
+    "static/css/main.b100e6da.chunk.css",
+    "static/js/main.33c27374.chunk.js"
+  ]
+}
