@@ -2,15 +2,11 @@
 import { css, jsx } from '@emotion/core'
 import styled from '@emotion/styled'
 import React from 'react'
+import useSWR from 'swr'
 import logo from './logo.svg'
 import './App.css'
+import fetch from './libs/fetch.js'
 
-const HeaderOptionContainer = styled.div`
-  padding: 14px 15px;
-  :hover {
-    color: #213a8f;
-  }
-`
 const Col12 = styled.div`
   flex: 0 0 100%;
   max-width: 100%;
@@ -152,9 +148,29 @@ const FooterItem = styled.div`
   }
 `
 
-const App = () => {
+const HeaderOption = ({ label, link }) => (
+  <a
+    css={css`
+      text-decoration: none;
+      padding: 14px 15px;
+      color: #333333;
+      :hover {
+        color: #213a8f;
+      }
+    `}
+    href={link}
+  >
+    {label}
+  </a>
+)
+
+const Header = () => {
+  const { data, error } = useSWR('https://panjs.com/ywc.json', fetch)
+
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
   return (
-    <div className="App">
+    <>
       <HeaderMobile>
         <img
           src="./chim/footer.png"
@@ -178,10 +194,60 @@ const App = () => {
         ></img>
       </HeaderMobile>
       <HeaderDesktop>
-        <HeaderOptionContainer>ลงทะเบียนเข้าร่วมโครงการ</HeaderOptionContainer>
-        <HeaderOptionContainer>ขั้นตอนการเข้าร่วม</HeaderOptionContainer>
-        <HeaderOptionContainer>ร้านค้าที่เข้าร่วม</HeaderOptionContainer>
+        {data.navbarItems.map(item => {
+          //  {
+          //   "label": "ลงทะเบียนเข้าร่วมมาตรการ",
+          //   "href": "https://regist.ชิมช้อปใช้.com/Register/"
+          // },
+          return <HeaderOption label={item.label} link={item.href} />
+        })}
       </HeaderDesktop>
+    </>
+  )
+}
+
+const CampaignDuration = () => {
+  const { data, error } = useSWR('https://panjs.com/ywc.json', fetch)
+
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
+  return (
+    <Col12
+      css={css`
+        font-size: 48px;
+        color: #e6332a;
+      `}
+      dangerouslySetInnerHTML={{ __html: data.duration }}
+    />
+  )
+}
+
+const CampaignInfo = () => {
+  const { data, error } = useSWR('https://panjs.com/ywc.json', fetch)
+
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
+  return (
+    <div
+      css={css`
+        margin-top: 1.5rem !important;
+      `}
+      dangerouslySetInnerHTML={{ __html: data.detail }}
+    />
+  )
+}
+
+const CampaignCondition = () => {
+  const { data, error } = useSWR('https://panjs.com/ywc.json', fetch)
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
+  return <p dangerouslySetInnerHTML={{ __html: data.condition }} />
+}
+
+const App = () => {
+  return (
+    <div className="App">
+      <Header />
       <div>
         <div
           css={css`
@@ -263,14 +329,7 @@ const App = () => {
           >
             ตั้งแต่วันที่
           </Col12>
-          <Col12
-            css={css`
-              font-size: 48px;
-              color: #e6332a;
-            `}
-          >
-            27 ก.ย. - 31 ธ.ค. 62
-          </Col12>
+          <CampaignDuration />
           <Col12>
             <BlueBox>
               ลงทะเบียน เฟส 2 <br />
@@ -291,18 +350,7 @@ const App = () => {
                 มาตรการส่งเสริมการบริโภค <br />
                 ในประเทศ “ชิมช้อปใช้”
               </HeadTitle>
-              <div
-                css={css`
-                  margin-top: 1.5rem !important;
-                `}
-              >
-                ผู้สนใจเข้าร่วมมาตรการส่งเสริมการบริโภคในประเทศ “ชิมช้อปใช้”
-                รับเงินผ่าน “เป๋าตัง” (G-Wallet) รวมจำนวน 13 ล้านคน
-                ลงทะเบียนรับสิทธิ ได้ทางเว็บไซต์ www.ชิมช้อปใช้.com <br />
-                ตั้งแต่วันที่ 23 กันยายน - 15 พฤศจิกายน 2562 (รับลงทะเบียน เฟส 2
-                ตั้งแต่วันที่ 24 ตุลาคม 2562 จำกัดจำนวนผู้ลงทะเบียน 1
-                ล้านคนต่อวัน จนกว่าจะครบ 3 ล้านคน)
-              </div>
+              <CampaignInfo />
               <div>
                 <Bold
                   css={css`
@@ -311,11 +359,7 @@ const App = () => {
                 >
                   เงื่อนไขการเข้าร่วมมาตรการ
                 </Bold>
-                <p>
-                  1. เป็นบุคคลสัญชาติไทย มีบัตรประจำตัวประชาชน <br />
-                  2. มีอายุตั้งแต่ 18 ปีบริบูรณ์ขึ้นไป ณ วันที่ลงทะเบียน <br />
-                  3.มีโทรศัพท์มือถือสมาร์ทโฟนที่สามารถเชื่อมต่อสัญญาณอินเทอร์เน็ตและมีอีเมล
-                </p>
+                <CampaignCondition />
               </div>
             </Container>
           </div>
@@ -428,7 +472,7 @@ const App = () => {
           `}
         >
           <div>Copyright @ 2003-2019</div>
-          <div>ลงทะเบียนเข้าร่วมโครงการ</div>
+          <div>ลงทะเบียนเข้าร่วมมาตรการ</div>
           <div>ขั้นตอนการเข้าร่วมทั้งหมด</div>
           <div>รายชื่อร้านค้าที่เข้าร่วมรายการ</div>
         </div>
