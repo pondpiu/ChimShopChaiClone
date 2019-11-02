@@ -1,11 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import styled from '@emotion/styled'
+import dompurify from 'dompurify'
 import React from 'react'
 import useSWR from 'swr'
 import logo from './logo.svg'
 import './App.css'
 import fetch from './libs/fetch.js'
+
+const sanitizer = dompurify.sanitize
 
 const FooterText = styled.p`
   margin-top: 0;
@@ -225,7 +228,7 @@ const CampaignDuration = () => {
         color: #e6332a;
         line-height: 1.5;
       `}
-      dangerouslySetInnerHTML={{ __html: data.duration }}
+      dangerouslySetInnerHTML={{ __html: sanitizer(data.duration) }}
     />
   )
 }
@@ -243,7 +246,7 @@ const CampaignInfo = () => {
         display: block;
         max-width: 83.333333%;
       `}
-      dangerouslySetInnerHTML={{ __html: data.detail }}
+      dangerouslySetInnerHTML={{ __html: sanitizer(data.detail) }}
     />
   )
 }
@@ -252,7 +255,7 @@ const CampaignCondition = () => {
   const { data, error } = useSWR('https://panjs.com/ywc.json', fetch)
   if (error) return <div>failed to load</div>
   if (!data) return <div>loading...</div>
-  return <p dangerouslySetInnerHTML={{ __html: data.condition }} />
+  return <p dangerouslySetInnerHTML={{ __html: sanitizer(data.condition) }} />
 }
 
 const App = () => {
