@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/chim-shop-chai-clone/static/css/main.4073ae42.chunk.css",
-    "main.js": "/chim-shop-chai-clone/static/js/main.32880045.chunk.js",
-    "main.js.map": "/chim-shop-chai-clone/static/js/main.32880045.chunk.js.map",
+    "main.js": "/chim-shop-chai-clone/static/js/main.640a5742.chunk.js",
+    "main.js.map": "/chim-shop-chai-clone/static/js/main.640a5742.chunk.js.map",
     "runtime-main.js": "/chim-shop-chai-clone/static/js/runtime-main.aadc9ebd.js",
     "runtime-main.js.map": "/chim-shop-chai-clone/static/js/runtime-main.aadc9ebd.js.map",
     "static/js/2.593fc688.chunk.js": "/chim-shop-chai-clone/static/js/2.593fc688.chunk.js",
     "static/js/2.593fc688.chunk.js.map": "/chim-shop-chai-clone/static/js/2.593fc688.chunk.js.map",
     "index.html": "/chim-shop-chai-clone/index.html",
-    "precache-manifest.ba438dd078d44fd47c44ebd1151325d1.js": "/chim-shop-chai-clone/precache-manifest.ba438dd078d44fd47c44ebd1151325d1.js",
+    "precache-manifest.f84d8dab16dd67ef5624005995980354.js": "/chim-shop-chai-clone/precache-manifest.f84d8dab16dd67ef5624005995980354.js",
     "service-worker.js": "/chim-shop-chai-clone/service-worker.js",
     "static/css/main.4073ae42.chunk.css.map": "/chim-shop-chai-clone/static/css/main.4073ae42.chunk.css.map",
     "static/media/App.css": "/chim-shop-chai-clone/static/media/TATSanaSuksa-Regular.f51f1b81.woff2",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.aadc9ebd.js",
     "static/js/2.593fc688.chunk.js",
     "static/css/main.4073ae42.chunk.css",
-    "static/js/main.32880045.chunk.js"
+    "static/js/main.640a5742.chunk.js"
   ]
 }
