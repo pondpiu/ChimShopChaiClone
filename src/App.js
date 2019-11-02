@@ -7,6 +7,10 @@ import logo from './logo.svg'
 import './App.css'
 import fetch from './libs/fetch.js'
 
+const FooterText = styled.p`
+  margin-top: 0;
+`
+
 const Col12 = styled.div`
   flex: 0 0 100%;
   max-width: 100%;
@@ -55,7 +59,7 @@ const BlueBox = styled.button`
   box-shadow: 0 15px 30px 0 rgba(28, 78, 132, 0.4);
   background-color: #213a8f;
   font-size: 24px;
-  margin: 10px 0px;
+  margin: 20px 0px;
   width: 900px;
   padding: 10px;
   @media (max-width: 769px) {
@@ -120,18 +124,24 @@ const HeaderDesktop = styled.div`
   }
 `
 const HeaderMobile = styled.div`
+  z-index: 99999999;
   display: flex;
   text-decoration: none;
   color: #333333;
   font-weight: bold;
-  background-color: transparent;
+  background-color: white;
   cursor: pointer;
   font-family: TATSanaChon;
   font-size: 14px;
+
+  padding: 10px 20px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   @media (min-width: 620px) {
     display: none;
   }
-  padding: 10px 20px;
 `
 const FooterHead = styled.div`
   font-weight: bold;
@@ -141,6 +151,8 @@ const FooterHead = styled.div`
 
 const FooterItem = styled.div`
   flex: 1;
+  font-family: 'TATSanaSuksa';
+  margin: 0 20px;
 `
 
 const HeaderOption = ({ label, link }) => (
@@ -209,8 +221,9 @@ const CampaignDuration = () => {
   return (
     <Col12
       css={css`
-        font-size: 48px;
+        font-size: 30px;
         color: #e6332a;
+        line-height: 1.5;
       `}
       dangerouslySetInnerHTML={{ __html: data.duration }}
     />
@@ -328,12 +341,25 @@ const App = () => {
             ตั้งแต่วันที่
           </Col12>
           <CampaignDuration />
-          <Col12>
+          <Col12
+            css={css`
+              position: relative;
+            `}
+          >
             <BlueBox>
               ลงทะเบียน เฟส 2 <br />
               ตั้งแต่วันที่ 24 ต.ค. วันละ 2 รอบ เวลา 6.00 และ 18.00 น. <br />
               (จำกัดจำนวนผู้ ยนรอบละ 5 แสนคน รวม 1 ล้ายคนต่อวัน)
             </BlueBox>
+            <hr
+              css={css`
+                position: relative;
+                top: -50px;
+                z-index: -1;
+                border: 0;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+              `}
+            />
           </Col12>
           <div
             css={css`
@@ -368,11 +394,12 @@ const App = () => {
             justify-content: center;
             width: 100%;
             margin: auto;
+            flex-wrap: wrap;
             img {
-              width: 200px;
+              width: 20em;
             }
             @media (min-width: 768px) {
-              max-width: 720px;
+              max-width: 1020px;
             }
             @media (max-width: 576px) {
               max-width: 540px;
@@ -393,6 +420,9 @@ const App = () => {
             margin: 100px auto;
             flex-wrap: wrap;
             justify-content: space-around;
+            @media (min-width: 768px) {
+              max-width: 1020px;
+            }
           `}
         >
           <LogoSmallContainer>
@@ -415,7 +445,11 @@ const App = () => {
           </LogoSmallContainer>
         </Container>
       </div>
-      <div>
+      <div
+        css={css`
+          font-family: 'TATSanaSuksaBold';
+        `}
+      >
         <div
           css={css`
             background: #fafafa;
@@ -424,6 +458,7 @@ const App = () => {
             /* width: 100%; */
             padding-top: 30px;
             padding-left: 50px;
+            margin: 0 10px;
             text-align: left;
             @media (max-width: 576px) {
               flex-direction: column;
@@ -438,6 +473,7 @@ const App = () => {
               @media (max-width: 576px) {
                 display: relative;
                 justify-content: left;
+                margin-bottom: 20px;
               }
             `}
           >
@@ -454,38 +490,39 @@ const App = () => {
           </FooterItem>
           <FooterItem>
             <FooterHead>ข้อมูลลงทะเบียนประชาชน</FooterHead>
-            <p>
+            <FooterText>
               การรับสิทธิ การใช้งานแอปพลิเคชั่น <span>“เป๋าตัง”</span> และ
               <span>“ถุงเงิน”</span> <br />
               ติดต่อ ชิมช้อปใช้ Call Center by Krungthai
               <br />
               โทร.0 2111 1144
-            </p>
+            </FooterText>
           </FooterItem>
           <FooterItem>
             <FooterHead>ข้อมูลลงทะเบียนผู้ประกอบการ</FooterHead>
-            <p>
+            <FooterText>
               เงื่อนไขและวิธีการเข้าร่วมมาตรการฯ
               <br />
               ติดต่อ โทร.0 2270 6400 กด 7
-            </p>
+            </FooterText>
           </FooterItem>
           <FooterItem>
             <FooterHead>ข้อมูลเที่ยวชิมช้อปใช้</FooterHead>
-            <p>
+            <FooterText>
               ติดต่อ ททท.
               <br />
               โทร1672
-            </p>
+            </FooterText>
           </FooterItem>
         </div>
         <div
           css={css`
-            padding: 10px;
+            padding: 10px 80px;
             background: #213a8f;
             color: white;
             display: flex;
             justify-content: center;
+            font-size: 14px;
             /* width: 100%; */
             div {
               flex: 1;
@@ -495,7 +532,7 @@ const App = () => {
               text-align: left;
               padding-left: 20px;
               div {
-                margin: 10px 0;
+                margin: 10px 20px;
               }
             }
           `}
