@@ -136,16 +136,11 @@ const HeaderMobile = styled.div`
 const FooterHead = styled.div`
   font-weight: bold;
   color: #e6332a;
-  margin-top: 24px;
   font-size: 16px;
 `
 
 const FooterItem = styled.div`
-  @media (min-width: 576px) {
-    -ms-flex: 0 0 25%;
-    flex: 0 0 25%;
-    max-width: 25%;
-  }
+  flex: 1;
 `
 
 const HeaderOption = ({ label, link }) => (
@@ -368,10 +363,16 @@ const App = () => {
           css={css`
             display: flex;
             justify-content: center;
+            width: 100%;
+            margin: auto;
             img {
               width: 200px;
             }
+            @media (min-width: 768px) {
+              max-width: 720px;
+            }
             @media (max-width: 576px) {
+              max-width: 540px;
               flex-direction: column;
               align-items: center;
             }
@@ -416,18 +417,34 @@ const App = () => {
           css={css`
             background: #fafafa;
             display: flex;
-            width: 100%;
+            justify-content: center;
+            /* width: 100%; */
+            padding-top: 30px;
+            padding-left: 50px;
+            text-align: left;
             @media (max-width: 576px) {
               flex-direction: column;
-              text-align: left;
               padding-left: 20px;
             }
           `}
         >
-          <FooterItem>
+          <FooterItem
+            css={css`
+              display: flex;
+              justify-content: center;
+              @media (max-width: 576px) {
+                display: relative;
+                justify-content: left;
+              }
+            `}
+          >
             <img
               css={css`
+                margin: auto;
                 width: 100px;
+                @media (max-width: 576px) {
+                  margin: 0;
+                }
               `}
               src="./chim/footer.png"
             />
@@ -435,19 +452,28 @@ const App = () => {
           <FooterItem>
             <FooterHead>ข้อมูลลงทะเบียนประชาชน</FooterHead>
             <p>
-              การรับสิทธิ การใช้งานแอปพลิเคชั่น “เป๋าตัง” และ “ถุงเงิน” ติดต่อ
-              ชิมช้อปใช้ Call Center by Krungthai โทร.0 2111 1144
+              การรับสิทธิ การใช้งานแอปพลิเคชั่น <span>“เป๋าตัง”</span> และ
+              <span>“ถุงเงิน”</span> <br />
+              ติดต่อ ชิมช้อปใช้ Call Center by Krungthai
+              <br />
+              โทร.0 2111 1144
             </p>
           </FooterItem>
           <FooterItem>
             <FooterHead>ข้อมูลลงทะเบียนผู้ประกอบการ</FooterHead>
             <p>
-              เงื่อนไขและวิธีการเข้าร่วมมาตรการฯ ติดต่อ โทร.0 2270 6400 กด 7
+              เงื่อนไขและวิธีการเข้าร่วมมาตรการฯ
+              <br />
+              ติดต่อ โทร.0 2270 6400 กด 7
             </p>
           </FooterItem>
           <FooterItem>
             <FooterHead>ข้อมูลเที่ยวชิมช้อปใช้</FooterHead>
-            <p>ติดต่อ ททท. โทร1672</p>
+            <p>
+              ติดต่อ ททท.
+              <br />
+              โทร1672
+            </p>
           </FooterItem>
         </div>
         <div
@@ -457,7 +483,7 @@ const App = () => {
             color: white;
             display: flex;
             justify-content: center;
-            width: 100%;
+            /* width: 100%; */
             div {
               flex: 1;
             }
