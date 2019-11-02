@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "688186b37020798912146bf8b13899d1",
+    "revision": "f2b6de0fe8c11d2763e4028dfc1b34b9",
     "url": "/chim-shop-chai-clone/index.html"
   },
   {
-    "revision": "50da873225b864b1d853",
+    "revision": "5ee44db72e90fd061b14",
     "url": "/chim-shop-chai-clone/static/css/main.4073ae42.chunk.css"
   },
   {
-    "revision": "9cbd9e7ca10e13db37d9",
-    "url": "/chim-shop-chai-clone/static/js/2.593fc688.chunk.js"
+    "revision": "41a002b0a0917efb63ca",
+    "url": "/chim-shop-chai-clone/static/js/2.377f909c.chunk.js"
   },
   {
-    "revision": "50da873225b864b1d853",
-    "url": "/chim-shop-chai-clone/static/js/main.640a5742.chunk.js"
+    "revision": "5ee44db72e90fd061b14",
+    "url": "/chim-shop-chai-clone/static/js/main.902eb371.chunk.js"
   },
   {
     "revision": "2077bd1413578e8cbba6",
