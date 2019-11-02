@@ -225,7 +225,10 @@ const CampaignInfo = () => {
   return (
     <div
       css={css`
+        font-family: TATSanaSuksa;
         margin-top: 1.5rem !important;
+        display: block;
+        max-width: 83.333333%;
       `}
       dangerouslySetInnerHTML={{ __html: data.detail }}
     />
